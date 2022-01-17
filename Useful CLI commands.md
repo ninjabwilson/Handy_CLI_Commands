@@ -18,32 +18,52 @@ $ find -iname '*.mp3' -exec cp {} /home/sk/test2/ \;
 **Change permission recursively for a directory**
 
 #Full permission user/group, none to others
+
+```bash
 chmod -R 770 my_di
+'''
 
 #FUll perimission all
+
+```bash
 chmod -R a=rwx my_dir
+'''
 
 **File sorting in ls**
 
 # time
+
+```bash
 ls -lt
+'''
 
 # extension
+
+```bash
 ls -lx
+'''
 
 **Find & Sort files via file extension**
 
+```bash
 find . -iname "*.md" | sort -r
+'''
 
 **Find files & sort by type**
 
+```bash
 find -name "snap*" -type d
+'''
 
 **Find files via properties of the file**
 
+```bash
 find -name "snap*" -printf "%a %p \n"
+'''
 
+```bash
 find \( -name "*.html" -type f \) -or -name "*.json" -printf "%u %g %p \n"
+'''
 
     %a – Returns the last time a file was accessed.
     %b – Returns the amount of disk space used for a file in 512-byte blocks.
@@ -57,10 +77,16 @@ find \( -name "*.html" -type f \) -or -name "*.json" -printf "%u %g %p \n"
     %u – Returns a file owner’s user name or numeric user ID if the user has no name.
 
 # Find files and directories one step down from the working directory
+
+```bash
 find . -maxdepth 1 -name "chart*"
+'''
 
 # Find files and directories two steps down from the ~/chart directory
+
+```bash
 find ~/chart -maxdepth 2 -name "chart"
+'''
 
 **Find a MAC addr**
 
@@ -94,7 +120,14 @@ $ dig +short myip.opendns.com @resolver1.opendns.com
 **List all rules for IP Tables**
 
 # IPv4
+
+```bash
 sudo iptables -S
+'''
+
 # IPv6
+
+```bash
 sudo ip6tables -S
+'''
 
